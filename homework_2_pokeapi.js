@@ -54,8 +54,11 @@ async function getPokemonsDescription() {
   console.log('descriptionResponse', descriptionResponse)
 }
 // 9	Написать функцию которая принимает 2 аргумента. 1 – любое значение, 2 - задержка
-// const getValue = (value, delay) => {
-//     setTimeout(() => console.log(value), delay)
-// }
-// console.log(getValue('Hello', 2000))
-// console.log(getValue('World', 5000))
+  
+  const getValue = (value, delay) => {
+    return new Promise((resolve) => {
+        setTimeout(() => resolve(value), delay)
+    })
+}
+getValue('Hello', 2000).then(data => console.log(data))
+getValue('World', 5000).then(data => console.log(data))
